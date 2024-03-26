@@ -15,14 +15,15 @@ class Register : AppCompatActivity() {
 
         // Tombol (button) navigasi ke halaman login
         binding.btnRegister.setOnClickListener {
-            val intentActivityLogin = Intent(this, ActivityLoginBinding::class.java)
-            startActivity(intentActivityLogin)
+            val intentLogin = Intent(this, Login::class.java)
+            startActivity(intentLogin)
 
 
-        // Link (text view) navigasi ke halaman login
-        binding.tvLinkSudahPunyaAkun.setOnClickListener {
-            val intentActivityLogin = Intent(this, ActivityLoginBinding::class.java)
-            startActivity(intentActivityLogin)
+            // Link (text view) navigasi ke halaman login
+            binding.tvLinkSudahPunyaAkun.setOnClickListener {
+                val intentLogin1 = Intent(this, Login::class.java)
+                startActivity(intentLogin1)
+            }
         }
     }
 }
