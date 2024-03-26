@@ -15,13 +15,13 @@ class Register : AppCompatActivity() {
 
         // Tombol ke lupa Login
         binding.btnRegister.setOnClickListener{
-            val intent=Intent(this, Login::class.java)
+            val intent = Intent(this, Login::class.java)
             startActivity (intent)
         }
 
         // Link ke lupa Login
         binding.tvKeLogin.setOnClickListener{
-            val intent=Intent(this, Login::class.java)
+            val intent = Intent(this, Login::class.java)
             startActivity (intent)
         }
     }
