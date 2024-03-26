@@ -17,13 +17,13 @@ class Register : AppCompatActivity() {
         binding.btnRegister.setOnClickListener {
             val intentLogin = Intent(this, Login::class.java)
             startActivity(intentLogin)
+        }
 
 
-            // Link (text view) navigasi ke halaman login
-            binding.tvLinkSudahPunyaAkun.setOnClickListener {
-                val intentLogin1 = Intent(this, Login::class.java)
-                startActivity(intentLogin1)
-            }
+        // Link (text view) navigasi ke halaman login
+        binding.tvKeLogin.setOnClickListener {
+            val intentLogin = Intent(this, Login::class.java)
+            startActivity(intentLogin)
         }
     }
 }
