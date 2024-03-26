@@ -13,17 +13,16 @@ class Register : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        // Tombol (button) navigasi ke halaman login
-        binding.btnRegister.setOnClickListener {
-            val intentLogin = Intent(this, Login::class.java)
-            startActivity(intentLogin)
+        // Tombol ke lupa Login
+        binding.btnRegister.setOnClickListener{
+            val intent=Intent(this, Login::class.java)
+            startActivity (intent)
         }
 
-
-        // Link (text view) navigasi ke halaman login
-        binding.tvKeLogin.setOnClickListener {
-            val intentLogin = Intent(this, Login::class.java)
-            startActivity(intentLogin)
+        // Link ke lupa Login
+        binding.tvKeLogin.setOnClickListener{
+            val intent=Intent(this, Login::class.java)
+            startActivity (intent)
         }
     }
 }

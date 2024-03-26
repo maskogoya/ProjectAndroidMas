@@ -1,6 +1,7 @@
 package com.example.projectandroidmas
 
 import android.content.Intent
+import android.net.wifi.hotspot2.pps.HomeSp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.projectandroidmas.databinding.ActivityLoginBinding
@@ -15,22 +16,22 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        // Tombol (button) navigasi ke halaman MainActivity
-        binding.loginBtn.setOnClickListener {
-            val intentMain = Intent(this, MainActivity::class.java)
-            startActivity(intentMain)
+        // Link ke Register
+        binding.tvLinkToRegister.setOnClickListener{
+            val intent = Intent(this, Register::class.java)
+            startActivity(intent)
         }
 
-        // Link (text view) navigasi ke halaman Register
-        binding.tvLinkToRegister.setOnClickListener {
-            val intentRegister = Intent(this, Register::class.java)
-            startActivity(intentRegister)
+        // Link ke lupa password
+        binding.linkLupaPassword.setOnClickListener{
+            val intent = Intent(this, LupaPassword::class.java)
+            startActivity(intent)
         }
 
-        // Link (text view) navigasi ke halaman Lupa Password
-        binding.linkLupaPassword.setOnClickListener {
-            val intentLupaPass = Intent(this, LupaPassword::class.java)
-            startActivity(intentLupaPass)
+        // Tombol ke MainActivity / Home
+        binding.loginBtn.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 }

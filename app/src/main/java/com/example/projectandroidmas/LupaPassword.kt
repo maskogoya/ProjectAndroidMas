@@ -13,10 +13,10 @@ class LupaPassword : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        // Link (text view) navigasi ke halaman Login
+        // Kembali ke login
         binding.btnKembaliKeLogin.setOnClickListener {
-            val intentLogin = Intent(this, Login::class.java)
-            startActivity(intentLogin)
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
         }
     }
 }

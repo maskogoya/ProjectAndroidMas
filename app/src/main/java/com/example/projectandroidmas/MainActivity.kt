@@ -18,43 +18,36 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        // handle click, share text
+
+        // Kirim teks
         binding.btnKirimText.setOnClickListener {
-            //get text from edit text
             textToShare = binding.edtKirimText.text.toString().trim()
-            //check if text empty or not
-            if (textToShare.isEmpty()) {
-                showToast("Masukkan teks..")
+            if (textToShare.isNotEmpty()) {
+                // shareText()
+                val intent = Intent(Intent.ACTION_SEND)
+                intent.type = "text/plain"
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Subject here")
+                intent.putExtra(Intent.EXTRA_TEXT, textToShare)
+                startActivity(Intent.createChooser(intent, "Share Via"))
             }
             else {
-                shareText()
+                Toast.makeText(this,"Teks tidak boleh kosong..", Toast.LENGTH_SHORT).show()
             }
         }
 
         // Membuka maps
         binding.btnBukaMaps.setOnClickListener {
-            // Membuat intent utk terhubung ke maps
             val intentOpenMaps = Intent(Intent.ACTION_VIEW)
             intentOpenMaps.data = Uri.parse("https://www.google.com/maps/")
             startActivity(intentOpenMaps)
         }
 
-        // Logout dari aplikasi
+        // Keluar dari aplikasi
         binding.btnKeluarApk.setOnClickListener{
             val intent = Intent(this, Login::class.java)
             startActivity(intent)
         }
     }
 
-    private fun shareText() {
-        val intent = Intent(Intent.ACTION_SEND)
-        intent.type = "text/plain"
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Subject here")
-        intent.putExtra(Intent.EXTRA_TEXT, textToShare)
-        startActivity(Intent.createChooser(intent, "Share Via"))
-    }
 
-    private fun showToast(pesan: String) {
-        Toast.makeText(this, pesan, Toast.LENGTH_SHORT).show()
-    }
 }
